@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+		<PropertyGroup>
+				<TargetFrameworks>net461;net6.0-windows</TargetFrameworks>
+				<UseWindowsForms>true</UseWindowsForms>
+				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
+				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows|AnyCPU'">
+				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows|AnyCPU'">
+				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows7.0|AnyCPU'">
+				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows7.0|AnyCPU'">
+				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		</PropertyGroup>
+		<ItemGroup>
+				<PackageReference Include="DockPanelSuite" Version="3.1.0" />
+				<PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.0" />
+				<PackageReference Include="NativeMenuBar" Version="1.2.3" />
+				<PackageReference Include="NativeMenuBar.Hooks.NETWindowMessageHook" Version="1.0.7" />
+		</ItemGroup>
+		<ItemGroup>
+				<ProjectReference Include="..\WinFormsWorkbench\WinFormsWorkbench.csproj" />
+		</ItemGroup>
+</Project>

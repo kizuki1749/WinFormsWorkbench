@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+		<PropertyGroup>
+				<TargetFrameworks>net452;net6.0-windows</TargetFrameworks>
+				<UseWindowsForms>true</UseWindowsForms>
+				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+				<Title>$(AssemblyName)</Title>
+				<Version>1.0</Version>
+				<Authors>kizuki1749</Authors>
+				<Description>WinFormsでアプリを作るときにメニュー項目やイベントハンドラを自動生成するライブラリ</Description>
+				<PackageProjectUrl>https://github.com/kizuki1749/WinFormsWorkbench</PackageProjectUrl>
+				<RepositoryUrl>https://github.com/kizuki1749/WinFormsWorkbench</RepositoryUrl>
+				<RepositoryType>git</RepositoryType>
+		</PropertyGroup>
+</Project>
