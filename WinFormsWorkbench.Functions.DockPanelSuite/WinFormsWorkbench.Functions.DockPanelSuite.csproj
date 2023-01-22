@@ -4,6 +4,20 @@
 				<TargetFrameworks>net461;net6.0-windows</TargetFrameworks>
 				<UseWindowsForms>true</UseWindowsForms>
 				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+				<Title>$(AssemblyName)</Title>
+				<Version>1.0</Version>
+				<Authors>kizuki1749</Authors>
+				<Description>WinFormsWorkbenchにおいてDockPanelSuiteを用いた機能を作成できるようにするライブラリ</Description>
+				<PackageProjectUrl>https://github.com/kizuki1749/WinFormsWorkbench</PackageProjectUrl>
+				<RepositoryUrl>https://github.com/kizuki1749/WinFormsWorkbench</RepositoryUrl>
+				<RepositoryType>git</RepositoryType>
+				<PackageLicenseExpression>MIT</PackageLicenseExpression>
+				<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+				<NeutralLanguage>ja-JP</NeutralLanguage>
+				<PackageReleaseNotes>初回リリース</PackageReleaseNotes>
+				<PackageReadmeFile>README.md</PackageReadmeFile>
+				<PackageIcon>WinFormsWorkbench.png</PackageIcon>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
 				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
@@ -23,6 +37,16 @@
 		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows7.0|AnyCPU'">
 				<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
 		</PropertyGroup>
+		<ItemGroup>
+		  <None Include="..\README.md">
+		    <Pack>True</Pack>
+		    <PackagePath>\</PackagePath>
+		  </None>
+		  <None Include="..\WinFormsWorkbench.png">
+		    <Pack>True</Pack>
+		    <PackagePath>\</PackagePath>
+		  </None>
+		</ItemGroup>
 		<ItemGroup>
 				<PackageReference Include="DockPanelSuite" Version="3.1.0" />
 				<PackageReference Include="DockPanelSuite.ThemeVS2015" Version="3.1.0" />
