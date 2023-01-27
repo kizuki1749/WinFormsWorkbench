@@ -19,6 +19,7 @@ namespace WinFormsWorkbench.CustomControls
 		{
 			_function = function;
 			InitializeComponent();
+			RegisterEvents();
 		}
 
 		public BaseFunctionToolStripDropDownItem(string name, BaseFunction function) : base()
@@ -26,18 +27,18 @@ namespace WinFormsWorkbench.CustomControls
 			_function = function;
 			Text = name;
 			InitializeComponent();
+			RegisterEvents();
 		}
 
-
-		protected override void OnPaint(PaintEventArgs pe)
+		private void RegisterEvents()
 		{
-			if (_function != null)
+			Paint += (sender, e) =>
 			{
-				//if (_function is ToggleFunction toggle)
-					//throw new InvalidOperationException("この項目ではその操作は無効です。");
-				Enabled = _function.CanRunFunction;
-			}
-			base.OnPaint(pe);
+				if (_function != null)
+				{
+					Enabled = _function.CanRunFunction;
+				}
+			};
 		}
 	}
 }

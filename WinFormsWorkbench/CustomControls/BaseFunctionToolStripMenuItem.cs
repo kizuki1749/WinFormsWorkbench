@@ -19,24 +19,27 @@ namespace WinFormsWorkbench.CustomControls
 		{
 			_function = function;
 			InitializeComponent();
+			RegisterEvents();
 		}
 
 		public BaseFunctionToolStripMenuItem(string name, BaseFunction function) : base(name)
 		{
 			_function = function;
 			InitializeComponent();
+			RegisterEvents();
 		}
 
-
-		protected override void OnPaint(PaintEventArgs pe)
+		private void RegisterEvents()
 		{
-			if (_function != null)
+			Paint += (sender, e) =>
 			{
-				if (_function is ToggleFunction toggle)
-					Checked = toggle.IsActive;
-				Enabled = _function.CanRunFunction;
-			}
-			base.OnPaint(pe);
+				if (_function != null)
+				{
+					if (_function is ToggleFunction toggle)
+						Checked = toggle.IsActive;
+					Enabled = _function.CanRunFunction;
+				}
+			};
 		}
 	}
 }
