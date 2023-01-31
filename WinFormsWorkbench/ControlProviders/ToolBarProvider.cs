@@ -90,6 +90,8 @@ namespace WinFormsWorkbench.ControlProviders
 						BaseFunctionToolStripMenuItem menuItem = new BaseFunctionToolStripMenuItem(item.Name, item);
 						menuItem.Image = item.Image;
 						menuItem.Click += (sender, e) => item.RunFunction();
+						if (item is ToggleFunction toggle)
+							menuItem.Checked = toggle.IsActive;
 						toolStrip.Add(menuItem);
 					}
 					else
@@ -97,6 +99,8 @@ namespace WinFormsWorkbench.ControlProviders
 						BaseFunctionToolStripButton menuItem = new BaseFunctionToolStripButton(item.Name, item);
 						menuItem.Image = item.Image;
 						menuItem.Click += (sender, e) => item.RunFunction();
+						if (item is ToggleFunction toggle)
+							menuItem.Checked = toggle.IsActive;
 						toolStrip.Add(menuItem);
 					}
 				}

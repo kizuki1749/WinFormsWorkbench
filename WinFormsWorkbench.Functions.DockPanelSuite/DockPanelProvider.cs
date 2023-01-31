@@ -19,6 +19,8 @@ namespace WinFormsWorkbench.ControlProviders
 		/// </summary>
 		public DockPanel DockPanel { get; }
 
+		private bool _doNotRegisterControl = false;
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
@@ -38,10 +40,21 @@ namespace WinFormsWorkbench.ControlProviders
 			DockPanel.Theme = theme;
 		}
 
+		/// <summary>
+		/// コンストラクタ(既存のDockPanelを利用)
+		/// </summary>
+		/// <param name="dockPanel">対象のDockPanel</param>
+		public DockPanelProvider(DockPanel dockPanel)
+		{
+			DockPanel = dockPanel;
+			_doNotRegisterControl = true;
+		}
+
 		/// <inheritdoc />
 		protected override void Init(Form form)
 		{
-			form.Controls.Add(DockPanel);
+			if (!_doNotRegisterControl)
+				form.Controls.Add(DockPanel);
 		}
 
 		/// <inheritdoc />

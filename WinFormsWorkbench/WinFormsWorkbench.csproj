@@ -6,7 +6,7 @@
 				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 				<Title>$(AssemblyName)</Title>
-				<Version>1.0.2</Version>
+				<Version>1.0.3</Version>
 				<Authors>kizuki1749</Authors>
 				<Description>WinFormsでアプリを作るときにメニュー項目やイベントハンドラを自動生成するライブラリ</Description>
 				<PackageProjectUrl>https://github.com/kizuki1749/WinFormsWorkbench</PackageProjectUrl>
@@ -15,7 +15,7 @@
 				<PackageLicenseExpression>MIT</PackageLicenseExpression>
 				<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 				<NeutralLanguage>ja-JP</NeutralLanguage>
-				<PackageReleaseNotes>項目の描画時に発生するちらつきを修正しました。</PackageReleaseNotes>
+				<PackageReleaseNotes>不具合の修正を行いました。</PackageReleaseNotes>
 				<PackageReadmeFile>README.md</PackageReadmeFile>
 				<PackageIcon>WinFormsWorkbench.png</PackageIcon>
 				<GenerateDocumentationFile>True</GenerateDocumentationFile>
