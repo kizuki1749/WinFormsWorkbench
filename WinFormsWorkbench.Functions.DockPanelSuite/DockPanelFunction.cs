@@ -46,7 +46,8 @@ namespace WinFormsWorkbench.Functions
 		/// <param name="name">名前</param>
 		/// <param name="content">表示内容</param>
 		/// <param name="dockState">初期ドッキング状態</param>
-		public DockPanelFunction(string name, DockContent content, DockState dockState = DockState.Document) : this(name, content, null, dockState)
+		/// <param name="showPanel">初期状態で表示するかどうか</param>
+		public DockPanelFunction(string name, DockContent content, DockState dockState = DockState.Document, bool showPanel = false) : this(name, content, null, dockState, showPanel)
 		{
 		}
 
@@ -57,11 +58,14 @@ namespace WinFormsWorkbench.Functions
 		/// <param name="content">表示内容</param>
 		/// <param name="image">項目に設定する画像</param>
 		/// <param name="dockState">初期ドッキング状態</param>
-		public DockPanelFunction(string name, DockContent content, Image image, DockState dockState = DockState.Document) : base(name, null, null, image)
+		/// <param name="showPanel">初期状態で表示するかどうか</param>
+		public DockPanelFunction(string name, DockContent content, Image image, DockState dockState = DockState.Document, bool showPanel = false) : base(name, null, null, image)
 		{
 			DockState = dockState;
 			Content = content;
 			Content.HideOnClose = true;
+			if (showPanel)
+				EnableFunction();
 		}
 
 		/// <inheritdoc />
