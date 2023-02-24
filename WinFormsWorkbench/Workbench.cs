@@ -51,7 +51,8 @@ namespace WinFormsWorkbench
 
 		private void SetInstanseToFunction(BaseFunction function)
 		{
-			function._workbench = this;
+			function.Initialize(this);
+			function.Initialized(this);
 			if (function is FunctionGroup group)
 			{
 				foreach (BaseFunction item in group.Functions)

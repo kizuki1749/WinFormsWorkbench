@@ -40,6 +40,8 @@ namespace WinFormsWorkbench.Functions
 		/// <inheritdoc />
 		public override bool IsActive { get => !Content.IsHidden; }
 
+		internal bool ShowOnInitialized { get; private set; } = false;
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
@@ -64,7 +66,13 @@ namespace WinFormsWorkbench.Functions
 			DockState = dockState;
 			Content = content;
 			Content.HideOnClose = true;
-			if (showPanel)
+			ShowOnInitialized = showPanel;
+		}
+
+		/// <inheritdoc />
+		protected override void Initialized(Workbench workbench)
+		{
+			if (ShowOnInitialized)
 				EnableFunction();
 		}
 

@@ -6,7 +6,7 @@
 				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 				<Title>$(AssemblyName)</Title>
-				<Version>1.0.3</Version>
+				<Version>1.0.4</Version>
 				<Authors>kizuki1749</Authors>
 				<Description>WinFormsでアプリを作るときにメニュー項目やイベントハンドラを自動生成するライブラリ</Description>
 				<PackageProjectUrl>https://github.com/kizuki1749/WinFormsWorkbench</PackageProjectUrl>

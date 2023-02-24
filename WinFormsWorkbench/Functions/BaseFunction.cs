@@ -40,6 +40,19 @@ namespace WinFormsWorkbench.Functions
 
 		internal Workbench _workbench;
 
+		internal void Initialize(Workbench workbench)
+		{
+			_workbench = workbench;
+		}
+
+		/// <summary>
+		/// 初期化完了時に呼び出されます。
+		/// </summary>
+		/// <param name="workbench">対象のワークベンチのインスタンス</param>
+		protected internal virtual void Initialized(Workbench workbench)
+		{
+		}
+
 		/// <summary>
 		/// ProviderOptionから指定した型の項目を返します。
 		/// 複数指定されている場合は、一番最初の項目を返します。
