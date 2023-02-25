@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsWorkbench.CustomControls;
 using WinFormsWorkbench.Functions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using WinFormsWorkbench.Functions.Events;
 
 namespace WinFormsWorkbench.ControlProviders
 {
@@ -45,6 +45,8 @@ namespace WinFormsWorkbench.ControlProviders
 		{
 			foreach (var item in functions.Functions)
 			{
+				if (item is IEventFunction)
+					continue;
 				if (item is SeparatorDummyFunction)
 				{
 					ToolStripSeparator separator = new ToolStripSeparator();

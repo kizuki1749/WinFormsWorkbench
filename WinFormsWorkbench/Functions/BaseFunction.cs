@@ -99,7 +99,7 @@ namespace WinFormsWorkbench.Functions
 		}
 
 		/// <summary>
-		/// 機能を実行します
+		/// 機能を実行します。
 		/// </summary>
 		public abstract void RunFunction();
 	}

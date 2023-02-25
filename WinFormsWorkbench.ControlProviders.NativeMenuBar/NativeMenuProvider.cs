@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsWorkbench.Functions;
+using WinFormsWorkbench.Functions.Events;
 
 namespace WinFormsWorkbench.ControlProviders
 {
@@ -56,6 +57,8 @@ namespace WinFormsWorkbench.ControlProviders
 		{
 			foreach (var item in functions.Functions)
 			{
+				if (item is IEventFunction)
+					continue;
 				if (item is SeparatorDummyFunction)
 				{
 					NativeMenuSeparatorItem separator = new NativeMenuSeparatorItem();

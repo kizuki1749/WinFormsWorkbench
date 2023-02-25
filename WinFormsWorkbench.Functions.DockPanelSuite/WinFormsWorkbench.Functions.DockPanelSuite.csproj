@@ -6,7 +6,7 @@
 				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 				<Title>$(AssemblyName)</Title>
-				<Version>1.0.4</Version>
+				<Version>1.0.6</Version>
 				<Authors>kizuki1749</Authors>
 				<Description>WinFormsWorkbenchにおいてDockPanelSuiteを用いた機能を作成できるようにするライブラリ</Description>
 				<PackageProjectUrl>https://github.com/kizuki1749/WinFormsWorkbench</PackageProjectUrl>

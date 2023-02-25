@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,27 +11,30 @@ using WinFormsWorkbench.Functions.Events;
 namespace WinFormsWorkbench.ControlProviders
 {
 	/// <summary>
-	/// メニューバーを生成するクラス
+	/// コンテキストメニューを生成するクラス
 	/// </summary>
-	public class MenuBarProvider : ControlProvider
+	public class ContextMenuProvider : ControlProvider
 	{
 		/// <summary>
-		/// 対象のメニューバー
+		/// 対象のコンテキストメニュー
 		/// </summary>
-		public MenuStrip Menu { get; }
+		public ContextMenuStrip Menu { get; }
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public MenuBarProvider() : this(new MenuStrip())
+		/// <param name="target">コンテキストメニューを設定するコントロール</param>
+		public ContextMenuProvider(Control target)
 		{
+			Menu = new ContextMenuStrip();
+			target.ContextMenuStrip = Menu;
 		}
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		/// <param name="target">対象のメニューバー</param>
-		public MenuBarProvider(MenuStrip target)
+		/// <param name="target">対象のコンテキストメニュー</param>
+		public ContextMenuProvider(ContextMenuStrip target)
 		{
 			Menu = target;
 		}
@@ -40,7 +42,6 @@ namespace WinFormsWorkbench.ControlProviders
 		/// <inheritdoc />
 		protected internal override void Init(Form form)
 		{
-			form.Controls.Add(Menu);
 		}
 
 		/// <inheritdoc />
@@ -73,7 +74,7 @@ namespace WinFormsWorkbench.ControlProviders
 				{
 					ApplyFunctionsInternal(menuItem.DropDownItems, group);
 					if (group.IsRunnable)
-						menuItem.Click += (sender, e) => item.RunFunction();;
+						menuItem.Click += (sender, e) => item.RunFunction();
 				}
 				else
 				{

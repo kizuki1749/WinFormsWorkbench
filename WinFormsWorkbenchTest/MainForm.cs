@@ -36,7 +36,8 @@ namespace WinFormsWorkbenchTest
 				new ToolBarProvider(),
 				new MenuBarProvider(),
 				new NativeMenuProvider(),
-				contextMenuProvider,
+				//contextMenuProvider,
+				new ContextMenuProvider(this)
 			}), new FunctionGroup(new List<BaseFunction>()
 			{
 				new FunctionGroup("項目1", new List<BaseFunction>()
