@@ -16,9 +16,14 @@ namespace WinFormsWorkbench.ControlProviders
 	public class ListViewProvider : ControlProvider
 	{
 		/// <summary>
-		/// 項目選択時に実行される機能
+		/// 項目ダブルクリック時に実行される機能
 		/// </summary>
-		public virtual ListViewEventFunction ItemDoubleClickFunction { get; set; }
+		public virtual ListViewDoubleClickEventFunction ItemDoubleClickFunction { get; set; }
+
+		/// <summary>
+		/// 項目右クリック時に実行される機能
+		/// </summary>
+		public virtual ListViewRightClickEventFunction ItemRightClickFunction { get; set; }
 
 		/// <summary>
 		/// 対象のリストビュー
@@ -35,10 +40,17 @@ namespace WinFormsWorkbench.ControlProviders
 			{
 				ProcessDoubleClickEvent((ListView)sender, e);
 			};
+			target.MouseClick += (sender, e) =>
+			{
+				if (e.Button == MouseButtons.Right)
+					ProcessRightClickEvent((ListView)sender, e);
+			};
 			target.KeyDown += (sender, e) =>
 			{
 				if (e.KeyCode == Keys.Enter)
 					ProcessDoubleClickEvent((ListView)sender, e);
+				if (e.KeyCode == Keys.Apps)
+					ProcessRightClickEvent((ListView)sender, e);
 			};
 			ListView = target;
 		}
@@ -48,6 +60,13 @@ namespace WinFormsWorkbench.ControlProviders
 			if (target.SelectedItems.Count <= 0 || ItemDoubleClickFunction == null)
 				return;
 			ItemDoubleClickFunction.RunFunction(target.SelectedItems[0]);
+		}
+
+		private void ProcessRightClickEvent(ListView target, EventArgs e)
+		{
+			if (target.SelectedItems.Count <= 0 || ItemRightClickFunction == null)
+				return;
+			ItemRightClickFunction.RunFunction(target.SelectedItems[0]);
 		}
 
 		/// <inheritdoc />
@@ -60,10 +79,15 @@ namespace WinFormsWorkbench.ControlProviders
 		{
 			foreach (var function in functions.Functions)
 			{
-				if (function is ListViewEventFunction eventFunction)
+				if (function is ListViewDoubleClickEventFunction eventFunction)
 				{
 					ItemDoubleClickFunction = eventFunction;
-					break;
+					continue;
+				}
+				if (function is ListViewRightClickEventFunction eventRightClickFunction)
+				{
+					ItemRightClickFunction = eventRightClickFunction;
+					continue;
 				}
 			}
 		}

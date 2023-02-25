@@ -6,7 +6,7 @@
 				<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 				<Title>$(AssemblyName)</Title>
-				<Version>1.0.7</Version>
+				<Version>1.1.0</Version>
 				<Authors>kizuki1749</Authors>
 				<Description>WinFormsでアプリを作るときにメニュー項目やイベントハンドラを自動生成するライブラリ</Description>
 				<PackageProjectUrl>https://github.com/kizuki1749/WinFormsWorkbench</PackageProjectUrl>
@@ -15,10 +15,11 @@
 				<PackageLicenseExpression>MIT</PackageLicenseExpression>
 				<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 				<NeutralLanguage>ja-JP</NeutralLanguage>
-				<PackageReleaseNotes>不具合の修正を行いました。</PackageReleaseNotes>
+				<PackageReleaseNotes>リストビュー用の機能を実装しました。</PackageReleaseNotes>
 				<PackageReadmeFile>README.md</PackageReadmeFile>
 				<PackageIcon>WinFormsWorkbench.png</PackageIcon>
 				<GenerateDocumentationFile>True</GenerateDocumentationFile>
+				<Nullable>disable</Nullable>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
 		  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
